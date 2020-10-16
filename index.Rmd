@@ -100,7 +100,9 @@ knitr::include_graphics("img/ruleta.jpg")
 
 
 .pull-right[
-![](img/normal_simulada1.gif)
+```{r echo=FALSE}
+knitr::include_graphics('img/normal_simulada1.gif')
+```
 ]
 
 
@@ -141,7 +143,8 @@ knitr::include_graphics("img/ruleta.jpg")
 ---
 ### Investigación metodológica
 
-<iframe src="https://www.researchgate.net/publication/267205556_Power_Comparisons_of_Shapiro-Wilk_Kolmogorov-Smirnov_Lilliefors_and_Anderson-Darling_Tests" width="100%" height="100%" frameBorder="0"></iframe>
+<embed src="https://drive.google.com/viewerng/
+viewer?embedded=true&url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_tests_comparison.pdf" width="500" height="375">
 ---
 
 # Ejemplos
