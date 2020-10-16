@@ -276,6 +276,20 @@ dist_normal_dif %>%
 ]
 
 ---
+### Condiciones
+
+Las condiciones son uno de los componentes claves en el desarrollo de un experimento de simulación Montecarlo, puesto que permite controlar que variables influirán en las evaluaciones y generación de datos que se realicen, y hasta que punto la simulación puede acercarse a condiciones realistas.
+
+Algunas condiciones comunes y de utilidad son:
+
+- Diferenciar tamaños de muestras
+- Distribución no-normal de los datos
+- Presencia de outliers
+- Grupos desiguales
+- Presencia de heterocedasticidad
+
+
+---
 
 ## Aplicaciones:
 
