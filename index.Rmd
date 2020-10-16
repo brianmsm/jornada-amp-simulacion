@@ -144,7 +144,7 @@ knitr::include_graphics('img/normal_simulada1.gif')
 ### Investigación metodológica
 
 <embed src="https://drive.google.com/viewerng/
-viewer?embedded=true&url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_tests_comparison.pdf" width="500" height="375">
+viewer?embedded=true&url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_tests_comparison.pdf" width="1100" height="500">
 ---
 
 # Ejemplos
