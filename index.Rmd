@@ -146,9 +146,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
 .pull-left[
 **Función de densidad para** $X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.$
 
-<img src="https://i.upmath.me/svg/%0AP(x)%20%3D%20%5Cfrac%7B1%7D%7B%7B%5Csigma%20%5Csqrt%20%7B2%5Cpi%20%7D%20%7D%7De%5E%7B%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%5Cmathord%7B%5Cleft%2F%20%7B%5Cvphantom%20%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%20%5Cright.%20%5Ckern-%5Cnulldelimiterspace%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%0A" alt="
-P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
-" width="400" height="100">
+<img src="https://i.upmath.me/svg/%0AP(x)%20%3D%20%5Cfrac%7B1%7D%7B%7B%5Csigma%20%5Csqrt%20%7B2%5Cpi%20%7D%20%7D%7De%5E%7B%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%5Cmathord%7B%5Cleft%2F%20%7B%5Cvphantom%20%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%20%5Cright.%20%5Ckern-%5Cnulldelimiterspace%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%0A" width="400" height="100">
 
 **Función de distribución para** $X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.$
 

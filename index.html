@@ -11,7 +11,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x419fd86b68d4bdebb52f60010433986","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xdb3a36cb15f4c91a38a5c0a967ebaf7","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -84,7 +84,7 @@ top:1em;right:1em;
 class: middle
 
 .pull-left[.font120[.line-space1-5[
-*Es el uso de procesos aleatorios para cuantificar y estudiar distribuciones aleatorias, y a partir de ello analizar y comparar procedimientos estadísticos así como comportamientos de datos en sistemas más complejos &lt;a name=cite-gentle_monte_2005&gt;&lt;/a&gt;([Gentle, 2005](https://doi.org/10.1002/0470013192.bsa412)).* 
+*Es el uso de procesos aleatorios para cuantificar y estudiar distribuciones aleatorias, y a partir de ello analizar y comparar procedimientos estadísticos así como comportamientos de datos en sistemas más complejos ([Gentle, 2005](https://doi.org/10.1002/0470013192.bsa412)).* 
 ]]]
 
 .pull-right[
@@ -122,7 +122,7 @@ Aunque R, es el lenguaje *más lento* entre los mencionados, es el más difundid
 ---
 ### Aleatoriedad de datos
 
-Generar un número aleatorio es extremadamente complejo, y conlleva una serie de dificultades y requisitos que no solo se restrinjen al software &lt;a name=cite-park_random_1988&gt;&lt;/a&gt;([Park and Miller, 1988](https://doi.org/10.1145/63039.63042)), sino también al hardware.
+Generar un número aleatorio es extremadamente complejo, y conlleva una serie de dificultades y requisitos que no solo se restrinjen al software ([Park and Miller, 1988](https://doi.org/10.1145/63039.63042)), sino también al hardware.
 
 Lo que obtenemos en el software son `números pseudo-aleatorios` puesto que parten de un mismo puerto (`semilla`) pre-determinada para generarse.
 
@@ -133,7 +133,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Primer intento
 ```
 
 ```
-## [1] 4.3 4.1
+## [1] 4.1 2.3
 ```
 
 ```r
@@ -141,7 +141,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
 ```
 
 ```
-## [1] 1.4 4.9
+## [1] 4.4 3.3
 ```
 ]
 
@@ -173,9 +173,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
 .pull-left[
 **Función de densidad para** `\(X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.\)`
 
-&lt;img src="https://i.upmath.me/svg/%0AP(x)%20%3D%20%5Cfrac%7B1%7D%7B%7B%5Csigma%20%5Csqrt%20%7B2%5Cpi%20%7D%20%7D%7De%5E%7B%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%5Cmathord%7B%5Cleft%2F%20%7B%5Cvphantom%20%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%20%5Cright.%20%5Ckern-%5Cnulldelimiterspace%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%0A" alt="
-P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
-" width="400" height="100"&gt;
+&lt;img src="https://i.upmath.me/svg/%0AP(x)%20%3D%20%5Cfrac%7B1%7D%7B%7B%5Csigma%20%5Csqrt%20%7B2%5Cpi%20%7D%20%7D%7De%5E%7B%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%5Cmathord%7B%5Cleft%2F%20%7B%5Cvphantom%20%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%20%5Cright.%20%5Ckern-%5Cnulldelimiterspace%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%0A" width="400" height="100"&gt;
 
 **Función de distribución para** `\(X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.\)`
 
