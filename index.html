@@ -11,7 +11,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xcff0cb6b8b84fbd9c032f1620101d50","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x419fd86b68d4bdebb52f60010433986","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -96,6 +96,7 @@ class: middle
 ## Para ello necesitamos:
 
 .pull-left[.line-space2-0[
+- Software para simulación
 - Obtener aleatoriamente datos
 - Distribución o fórmula subyacente a esa intención
 - Condiciones
@@ -108,9 +109,180 @@ class: middle
 &lt;img src="img/normal_simulada1.gif" style="display: block; margin: auto;" /&gt;
 ]
 
+---
+### Software simulación
+
+Existen diversos softwares de costo para realizar simulación de datos ([goldsim](https://www.goldsim.com/), [xlstat](https://www.xlstat.com/es/soluciones/funciones/simulacion), [vose](https://www.vosesoftware.com/Monte-Carlo-simulation.php), etc.), sin embargo tienen la limitación de restringirse a funciones y soluciones específicas de determinado sector de interés. Por ej. riesgos financieros. 
+
+A fin de tener control total acerca de lo que se hará con los datos, condiciones y formas de evaluarlo, es recomendable utilizar un lenguaje de programación, entre los cuales puede estar C, C++, Ruby, Python, R, etc. 
+
+Aunque R, es el lenguaje *más lento* entre los mencionados, es el más difundido en cuanto a análisis de datos (en un sentido similar con `python`) y de fácil entendimiento.
+
+
+---
+### Aleatoriedad de datos
+
+Generar un número aleatorio es extremadamente complejo, y conlleva una serie de dificultades y requisitos que no solo se restrinjen al software &lt;a name=cite-park_random_1988&gt;&lt;/a&gt;([Park and Miller, 1988](https://doi.org/10.1145/63039.63042)), sino también al hardware.
+
+Lo que obtenemos en el software son `números pseudo-aleatorios` puesto que parten de un mismo puerto (`semilla`) pre-determinada para generarse.
+
+.pull-left[
+
+```r
+round(runif(n = 2, min = 1, max = 5), 1) # Primer intento
+```
+
+```
+## [1] 4.3 4.1
+```
+
+```r
+round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
+```
+
+```
+## [1] 1.4 4.9
+```
+]
+
+.pull-right[
+
+```r
+set.seed(123) # Establecer semilla
+round(runif(n = 2, min = 1, max = 5), 1) # Primer intento
+```
+
+```
+## [1] 2.2 4.2
+```
+
+```r
+set.seed(123)
+round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
+```
+
+```
+## [1] 2.2 4.2
+```
+]
 
 ---
 
+### Distribución o fórmula subyacente
+
+.pull-left[
+**Función de densidad para** `\(X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.\)`
+
+&lt;img src="https://i.upmath.me/svg/%0AP(x)%20%3D%20%5Cfrac%7B1%7D%7B%7B%5Csigma%20%5Csqrt%20%7B2%5Cpi%20%7D%20%7D%7De%5E%7B%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%5Cmathord%7B%5Cleft%2F%20%7B%5Cvphantom%20%7B%7B%20-%20%5Cleft(%20%7Bx%20-%20%5Cmu%20%7D%20%5Cright)%5E2%20%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%20%5Cright.%20%5Ckern-%5Cnulldelimiterspace%7D%20%7B2%5Csigma%20%5E2%20%7D%7D%7D%0A" alt="
+P(x) = \frac{1}{{\sigma \sqrt {2\pi } }}e^{{{ - \left( {x - \mu } \right)^2 } \mathord{\left/ {\vphantom {{ - \left( {x - \mu } \right)^2 } {2\sigma ^2 }}} \right. \kern-\nulldelimiterspace} {2\sigma ^2 }}}
+" width="400" height="100"&gt;
+
+**Función de distribución para** `\(X \sim \mathcal{N}(\mu,\,\sigma^{2})\,.\)`
+
+`\(F(x)=P(X≤x)\)`
+]
+
+.pull-right[
+
+```r
+x &lt;- seq(-3, 3, 1)
+dens_norm &lt;- dnorm(x, mean = 0, sd = 1)
+dens_norm
+```
+
+```
+## [1] 0.004431848 0.053990967 0.241970725 0.398942280 0.241970725 0.053990967
+## [7] 0.004431848
+```
+
+```r
+pnorm(3, mean = 0, sd = 1)
+```
+
+```
+## [1] 0.9986501
+```
+
+```r
+pnorm(1.96, mean = 0, sd = 1)
+```
+
+```
+## [1] 0.9750021
+```
+
+```r
+qnorm(0.975, mean = 0, sd = 1)
+```
+
+```
+## [1] 1.959964
+```
+
+]
+---
+### Distribución o fórmula subyacente
+
+Con la función `rnorm()` se pueden generar números pseudo-aleatorios provenientes de una distribución normal. En base a esto se pueden realizar algunos ensayos.
+
+.pull-left[
+
+```r
+library(tidyverse)
+set.seed(123)
+dist_normal &lt;- tibble(Media = rnorm(n = 300,
+                                    mean = 10,
+                                    sd = 1.2))
+
+grupo_a &lt;- dist_normal %&gt;% 
+  sample_frac(size = 0.5) 
+
+grupo_b &lt;- dist_normal %&gt;% 
+  anti_join(grupo_a)
+
+dist_normal &lt;- bind_rows(grupo_a,
+                         grupo_b) %&gt;% 
+  mutate(
+    Grupo = c(rep("A", 150),
+              rep("B", 150))
+  )
+```
+]
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-7-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
+### Distribución o fórmula subyacente
+
+Ahora, el ensayo tiene la misma intención pero generando datos aleatorios desde 2 distribuciones distintas. Esto es lo que estaría evaluándose bajo la hipótesis de que ***hay diferencia de medias en 2 grupos***, que en esencia indica que los grupos provienen de distribuciones distintas.
+
+.pull-left[
+
+```r
+dist_norm_A &lt;- tibble(Media = rnorm(n = 150,
+                                    mean = 10,
+                                    sd = 1.2))
+
+dist_norm_B &lt;- tibble(Media = rnorm(n = 150,
+                                    mean = 14,
+                                    sd = 0.8))
+
+dist_normal_dif &lt;- bind_rows(dist_norm_A,
+                             dist_norm_B) %&gt;% 
+  mutate(
+    Grupo = c(rep("A", 150),
+              rep("B", 150))
+  )
+```
+]
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+]
+
+---
 
 ## Aplicaciones:
 
@@ -148,6 +320,11 @@ class: middle
 
 &lt;embed src="https://drive.google.com/viewerng/
 viewer?embedded=true&amp;url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_tests_comparison.pdf" width="1100" height="500"&gt;
+---
+### Investigación metodológica
+
+[![](img/screenshot_invest_met2.png "Evaluación tamaño de muestra en AFC")](https://www.tandfonline.com/doi/full/10.1080/00949655.2010.520163)
+
 ---
 
 # Ejemplos
