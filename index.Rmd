@@ -130,9 +130,7 @@ knitr::include_graphics("img/ruleta.jpg")
 
 ### Aprendizaje de estadística
 
-```{r}
-knitr::include_url("https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1720551")
-```
+<iframe src="https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1720551" width="100%" height="100%" frameBorder="0"></iframe>
 
 
 
