@@ -130,10 +130,18 @@ knitr::include_graphics("img/ruleta.jpg")
 
 ### Aprendizaje de estadística
 
-<iframe src="https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1720551" width="100%" height="100%" frameBorder="0"></iframe>
+[![](img/screenshot_enseñanza_simulacion.png "Enseñanza de Estadística con Simulación")](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1720551)
 
+---
 
+### Investigación metodológica
 
+[![](img/screenshot_invest_met1.png "Evaluación de la normalidad")](https://www.tandfonline.com/doi/full/10.1080/00949655.2010.520163)
+
+---
+### Investigación metodológica
+
+<iframe src="https://www.researchgate.net/publication/267205556_Power_Comparisons_of_Shapiro-Wilk_Kolmogorov-Smirnov_Lilliefors_and_Anderson-Darling_Tests" width="100%" height="100%" frameBorder="0"></iframe>
 ---
 
 # Ejemplos
