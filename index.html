@@ -11,7 +11,7 @@
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/animate.css/animate.xaringan.css" rel="stylesheet" />
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
-    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"xa48b8ad57c34609b7718175453aed6b","expires":1}</script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x7fee0c5974f4263a601acd144289bf1","expires":1}</script>
     <script src="libs/himalaya/himalaya.js"></script>
     <script src="libs/js-cookie/js.cookie.js"></script>
     <link href="libs/editable/editable.css" rel="stylesheet" />
@@ -84,7 +84,7 @@ top:1em;right:1em;
 class: middle
 
 .pull-left[.font120[.line-space1-5[
-*Es el uso de procesos aleatorios para cuantificar y estudiar distribuciones aleatorias, y a partir de ello analizar y comparar procedimientos estadísticos así como comportamientos de datos en sistemas más complejos ([Gentle, 2005](https://doi.org/10.1002/0470013192.bsa412)).* 
+*Es el uso de procesos aleatorios para cuantificar y estudiar distribuciones aleatorias, y a partir de ello analizar y comparar procedimientos estadísticos así como comportamientos de datos en sistemas más complejos &lt;a name=cite-gentle_monte_2005&gt;&lt;/a&gt;([Gentle, 2005](https://doi.org/10.1002/0470013192.bsa412)).* 
 ]]]
 
 .pull-right[
@@ -122,7 +122,7 @@ Aunque R, es el lenguaje *más lento* entre los mencionados, es el más difundid
 ---
 ### Aleatoriedad de datos
 
-Generar un número aleatorio es extremadamente complejo, y conlleva una serie de dificultades y requisitos que no solo se restrinjen al software ([Park and Miller, 1988](https://doi.org/10.1145/63039.63042)), sino también al hardware.
+Generar un número aleatorio es extremadamente complejo, y conlleva una serie de dificultades y requisitos que no solo se restrinjen al software &lt;a name=cite-park_random_1988&gt;&lt;/a&gt;([Park and Miller, 1988](https://doi.org/10.1145/63039.63042)), sino también al hardware.
 
 Lo que obtenemos en el software son `números pseudo-aleatorios` puesto que parten de un mismo puerto (`semilla`) pre-determinada para generarse.
 
@@ -133,7 +133,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Primer intento
 ```
 
 ```
-## [1] 4.1 2.3
+## [1] 2.7 1.0
 ```
 
 ```r
@@ -141,7 +141,7 @@ round(runif(n = 2, min = 1, max = 5), 1) # Segundo intento
 ```
 
 ```
-## [1] 4.4 3.3
+## [1] 3.4 2.1
 ```
 ]
 
@@ -282,7 +282,7 @@ dist_normal_dif &lt;- bind_rows(dist_norm_A,
 
 ---
 ### Condiciones
-
+.line-space1-5[
 Las condiciones son uno de los componentes claves en el desarrollo de un experimento de simulación Montecarlo, puesto que permite controlar que variables influirán en las evaluaciones y generación de datos que se realicen, y hasta que punto la simulación puede acercarse a condiciones realistas.
 
 Algunas condiciones comunes y de utilidad son:
@@ -292,8 +292,46 @@ Algunas condiciones comunes y de utilidad son:
 - Presencia de outliers
 - Grupos desiguales
 - Presencia de heterocedasticidad
+]
+---
+### Condiciones
 
+.line-space1-5[
+Así, en caso haya 4 variaciones de tamaño de muestra, 3 grupos desiguales, y consideración de normalidad y no-normalidad, se tendría un diseño de 4x3x2 en la generación de los datos.
 
+En ese sentido, si se generá un mínimo de 50 datos por condición, se podría estar trabajando con 3600 datos aproximadamente. Es común observar estudios de simulación que consideren más de 150 condiciones combinadas al mismo tiempo.
+
+En estudios psicométricos, las condiciones pueden aumentar si se toma en cuenta la `cantidad de ítems`, `carga factorial`, `cantidad de factores` y `fiabilidad en cada factor`.
+]
+
+---
+### Replicaciones
+
+.line-space1-5[
+Las replicaciones permiten controlar problemas de error por la generación de números pseudo-aleatorios. Se trabaja bajo el supuesto de **tendencia**. Si 1 sola generación de datos indica que la prueba de `shapìro-wilk` no detecta adecuadamente la distribución normal de los datos, podría deberse a un error aleatorio.
+
+Sin embargo, la cuestión cambia si se trata de 459 de 1000 veces que se hace la generación de datos exactamente en las mismas condiciones. Los números de replicaciones más comunes oscilan entre 500 y 1000. Por lo que, en el ejemplo anterior tenemos, `4x3x2x1000`, lo que lleva al trabajo con `3 600 000` aproximadamente.
+]
+
+---
+
+### Evaluación
+
+.line-space1-5[
+Posterior a la elaboración del diseño y la generación de datos aleatorios correctamente gestionados, se debe evaluar el objetivo del mismo:
+
+- Comportamiento del estimador en diversas condiciones: RMSE y sesgo &lt;a name=cite-harwell_strategy_2019&gt;&lt;/a&gt;([Harwell, 2019](https://doi.org/10.22237/jmasm/1551907966)) 
+- % de Error tipo I y II 
+- Potencia estadística presente
+]
+
+.pull-left[
+![](img/Sesgo formula.png "Sesgo")
+]
+
+.pull-right[
+![](img/RMSE formula.png "Sesgo")
+]
 ---
 
 ## Aplicaciones:
@@ -339,7 +377,9 @@ viewer?embedded=true&amp;url=http://www.de.ufpb.br/~ulisses/disciplinas/normalit
 
 ---
 
-# Ejemplos
+class: inverse, center, middle
+
+# ¡Gracias por su atención!
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>

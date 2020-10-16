@@ -277,7 +277,7 @@ dist_normal_dif %>%
 
 ---
 ### Condiciones
-
+.line-space1-5[
 Las condiciones son uno de los componentes claves en el desarrollo de un experimento de simulación Montecarlo, puesto que permite controlar que variables influirán en las evaluaciones y generación de datos que se realicen, y hasta que punto la simulación puede acercarse a condiciones realistas.
 
 Algunas condiciones comunes y de utilidad son:
@@ -287,8 +287,46 @@ Algunas condiciones comunes y de utilidad son:
 - Presencia de outliers
 - Grupos desiguales
 - Presencia de heterocedasticidad
+]
+---
+### Condiciones
 
+.line-space1-5[
+Así, en caso haya 4 variaciones de tamaño de muestra, 3 grupos desiguales, y consideración de normalidad y no-normalidad, se tendría un diseño de 4x3x2 en la generación de los datos.
 
+En ese sentido, si se generá un mínimo de 50 datos por condición, se podría estar trabajando con 3600 datos aproximadamente. Es común observar estudios de simulación que consideren más de 150 condiciones combinadas al mismo tiempo.
+
+En estudios psicométricos, las condiciones pueden aumentar si se toma en cuenta la `cantidad de ítems`, `carga factorial`, `cantidad de factores` y `fiabilidad en cada factor`.
+]
+
+---
+### Replicaciones
+
+.line-space1-5[
+Las replicaciones permiten controlar problemas de error por la generación de números pseudo-aleatorios. Se trabaja bajo el supuesto de **tendencia**. Si 1 sola generación de datos indica que la prueba de `shapìro-wilk` no detecta adecuadamente la distribución normal de los datos, podría deberse a un error aleatorio.
+
+Sin embargo, la cuestión cambia si se trata de 459 de 1000 veces que se hace la generación de datos exactamente en las mismas condiciones. Los números de replicaciones más comunes oscilan entre 500 y 1000. Por lo que, en el ejemplo anterior tenemos, `4x3x2x1000`, lo que lleva al trabajo con `3 600 000` aproximadamente.
+]
+
+---
+
+### Evaluación
+
+.line-space1-5[
+Posterior a la elaboración del diseño y la generación de datos aleatorios correctamente gestionados, se debe evaluar el objetivo del mismo:
+
+- Comportamiento del estimador en diversas condiciones: RMSE y sesgo `r AutoCite(bib, "harwell_strategy_2019")` 
+- % de Error tipo I y II 
+- Potencia estadística presente
+]
+
+.pull-left[
+![](img/Sesgo formula.png "Sesgo")
+]
+
+.pull-right[
+![](img/RMSE formula.png "Sesgo")
+]
 ---
 
 ## Aplicaciones:
@@ -334,4 +372,6 @@ viewer?embedded=true&url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_te
 
 ---
 
-# Ejemplos
+class: inverse, center, middle
+
+# ¡Gracias por su atención!
