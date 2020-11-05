@@ -16,6 +16,17 @@ output:
       ratio: 16:9
 encoding: "UTF-8"
 ---
+# Acerca de esta presentación
+
+Las diapositivas fueron expuestas en la II Jornada de Metodología Cuantitativa en Psicología organizada por [Avances en Medición Psicológica](https://www.facebook.com/amp.unmsm). 
+
+El video de la ponencia pueden encontrarlo dándole click en el siguiente enlace: https://www.facebook.com/amp.unmsm/videos/364404511344708/
+
+Las diapositivas fueron elaboradas mediante el paquete [xaringan](https://github.com/yihui/xaringan) en R 4.0.2. Para una óptima visualización del mismo, recomiendo ir al siguiente enlace: [https://brianmsm.github.io/jornada-amp-simulacion/](https://brianmsm.github.io/jornada-amp-simulacion/), además que podrá siempre tener la versión actualizada de la misma. 
+
+El código fuente está disponible en el siguiente enlace: [https://github.com/brianmsm/jornada-amp-simulacion](https://github.com/brianmsm/jornada-amp-simulacion).
+
+---
 
 class: inverse, center, middle
 
@@ -349,26 +360,34 @@ Posterior a la elaboración del diseño y la generación de datos aleatorios cor
 ]
 
 ---
-
 ### Aprendizaje de estadística
 
 [![](img/screenshot_enseñanza_simulacion.png "Enseñanza de Estadística con Simulación")](https://www.tandfonline.com/doi/full/10.1080/10691898.2020.1720551)
 
 ---
-
 ### Investigación metodológica
 
 [![](img/screenshot_invest_met1.png "Evaluación de la normalidad")](https://www.tandfonline.com/doi/full/10.1080/00949655.2010.520163)
+
+---
+class: center
+
+### Investigación metodológica
+
+<!-- ```{r inv_met, echo=FALSE, out.width = '78%'} -->
+<!-- knitr::include_graphics("img/screenshot_invest_met2.png", dpi = 600) -->
+<!-- ``` -->
+
+```{r, echo=FALSE, out.width = '78%'}
+knitr::include_graphics("img/screenshot_invest_met2.png", dpi = 600) 
+```
+Fuente: [Tandfonline](https://www.tandfonline.com/doi/full/10.1080/00949655.2010.520163)
 
 ---
 ### Investigación metodológica
 
 <embed src="https://drive.google.com/viewerng/
 viewer?embedded=true&url=http://www.de.ufpb.br/~ulisses/disciplinas/normality_tests_comparison.pdf" width="1100" height="500">
----
-### Investigación metodológica
-
-[![](img/screenshot_invest_met2.png "Evaluación tamaño de muestra en AFC")](https://www.tandfonline.com/doi/full/10.1080/00949655.2010.520163)
 
 ---
 
